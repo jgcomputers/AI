@@ -6,7 +6,7 @@
 import hashlib
 import os
 
-def hash_password(password, salt):
+def hash_password_with_salt(password, salt):
     # Concatenate the password and salt
     salted_password = password.encode() + salt
 
@@ -22,9 +22,9 @@ def main():
     salt = os.urandom(16)
 
     # Hash the password with the salt
-    hashed_password = hash_password(password, salt)
+    hashed_password = hash_password_with_salt(password, salt)
 
-    # Print the hashed password and salt
+    # Print the hashed password
     print("Hashed Password:", hashed_password)
 
 if __name__ == "__main__":
